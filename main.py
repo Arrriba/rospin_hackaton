@@ -10,10 +10,16 @@ from transformers import CLIPProcessor, CLIPModel
 from selenium import webdriver
 import os 
 
-path = os.getcwd()
-os.environ["PATH"] += path + os.pathsep + 'geckodriver.exe'
+# path = os.getcwd()
+# os.environ["PATH"] += path + os.pathsep + 'geckodriver.exe'
 
-driver = webdriver.Firefox(executable_path=fr'{path}')
+# driver = webdriver.Firefox(executable_path=fr'{path}')
+
+path = os.getcwd()
+p = os.pathsep + path + 'geckodriver.exe'
+os.environ["PATH"] += p
+
+driver = webdriver.Firefox(executable_path=fr"{p}")
 
 model = CLIPModel.from_pretrained("flax-community/clip-rsicd")
 processor = CLIPProcessor.from_pretrained("flax-community/clip-rsicd")
