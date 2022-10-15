@@ -7,6 +7,12 @@ import numpy as np
 from geopy import Nominatim
 from transformers import CLIPProcessor, CLIPModel
 
+from selenium import webdriver
+
+path = "./"
+
+driver = webdriver.Firefox(path)
+
 model = CLIPModel.from_pretrained("flax-community/clip-rsicd")
 processor = CLIPProcessor.from_pretrained("flax-community/clip-rsicd")
 
