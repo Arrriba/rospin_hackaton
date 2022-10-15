@@ -8,7 +8,11 @@ from geopy import Nominatim
 from transformers import CLIPProcessor, CLIPModel
 
 from selenium import webdriver
+import os 
+path = "./"
+os.environ["PATH"] += os.pathsep + path + 'geckodriver.exe'
 
+driver = webdriver.Firefox(path)
 path = "./"
 
 driver = webdriver.Firefox(path)
