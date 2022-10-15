@@ -12,10 +12,9 @@ import os
 path = "./"
 os.environ["PATH"] += os.pathsep + path + 'geckodriver.exe'
 
-driver = webdriver.Firefox(path)
+driver = webdriver.Firefox(executable_path=path)
 path = "./"
 
-driver = webdriver.Firefox(path)
 
 model = CLIPModel.from_pretrained("flax-community/clip-rsicd")
 processor = CLIPProcessor.from_pretrained("flax-community/clip-rsicd")
