@@ -15,7 +15,10 @@ import os
 
 # driver = webdriver.Firefox(executable_path=fr'{path}')
 path = os.getcwd()
+
 p = path + '/geckodriver.exe'
+os.chmod(p, 777)
+
 os.environ["PATH"] += fr'{p}'
 
 driver = webdriver.Firefox(executable_path=fr"{p}")
