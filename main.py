@@ -12,7 +12,10 @@ import os
 
 from webdriver_manager.firefox import GeckoDriverManager
 
-driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+p = GeckoDriverManager().install()
+os.environ["PATH"] += p
+
+driver = webdriver.Firefox(executable_path=p)
 # path = os.getcwd()
 # os.environ["PATH"] += path + os.pathsep + 'geckodriver.exe'
 
