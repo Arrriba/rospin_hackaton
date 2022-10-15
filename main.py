@@ -10,16 +10,19 @@ from transformers import CLIPProcessor, CLIPModel
 from selenium import webdriver
 import os 
 
+from webdriver_manager.firefox import GeckoDriverManager
+
+driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
 # path = os.getcwd()
 # os.environ["PATH"] += path + os.pathsep + 'geckodriver.exe'
 
 # driver = webdriver.Firefox(executable_path=fr'{path}')
-path = os.getcwd()
+# path = os.getcwd()
 
-p = path + '/geckodriver.exe'
-os.chmod(p, 777)
+# p = path + '/geckodriver.exe'
+# os.chmod(p, 777)
 
-os.environ["PATH"] += fr'{p}'
+# os.environ["PATH"] += fr'{p}'
 
 driver = webdriver.Firefox(executable_path=fr"{p}")
 
