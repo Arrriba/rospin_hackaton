@@ -9,12 +9,11 @@ from transformers import CLIPProcessor, CLIPModel
 
 from selenium import webdriver
 import os 
-path = "./"
-os.environ["PATH"] += os.pathsep + path + 'geckodriver.exe'
 
-driver = webdriver.Firefox(executable_path=path)
-path = "./"
+path = os.getcwd()
+os.environ["PATH"] += path + os.pathsep + 'geckodriver.exe'
 
+driver = webdriver.Firefox(executable_path=fr'{path}')
 
 model = CLIPModel.from_pretrained("flax-community/clip-rsicd")
 processor = CLIPProcessor.from_pretrained("flax-community/clip-rsicd")
