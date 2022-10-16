@@ -10,25 +10,34 @@ from transformers import CLIPProcessor, CLIPModel
 from selenium import webdriver
 import os 
 
-from webdriver_manager.firefox import GeckoDriverManager
-import os, sys
+import chromedriver_binary  # Adds chromedriver binary to path
 
-# @st.experimental_singleton
-# def installff():
-#   os.system('sbase install geckodriver')
-#   os.system('ln -s /home/appuser/venv/lib/python3.7/site-packages/seleniumbase/drivers/geckodriver /home/appuser/venv/bin/geckodriver')
+driver = webdriver.Chrome()
 
-# _ = installff()
-# from selenium import webdriver
-# from selenium.webdriver import FirefoxOptions
-# opts = FirefoxOptions()
-# opts.add_argument("--headless")
-# browser = webdriver.Firefox(options=opts)
+# from webdriver_manager.firefox import GeckoDriverManager
+# import os, sys
 
-p = GeckoDriverManager().install()
-os.environ["PATH"] += p
+# # @st.experimental_singleton
+# # def installff():
+# #   os.system('sbase install geckodriver')
+# #   os.system('ln -s /home/appuser/venv/lib/python3.7/site-packages/seleniumbase/drivers/geckodriver /home/appuser/venv/bin/geckodriver')
 
-driver = webdriver.Firefox(executable_path=p)
+# # _ = installff()
+# # from selenium import webdriver
+# # from selenium.webdriver import FirefoxOptions
+# # opts = FirefoxOptions()
+# # opts.add_argument("--headless")
+# # browser = webdriver.Firefox(options=opts)
+
+# p = GeckoDriverManager().install()
+# os.environ["PATH"] += p
+
+# driver = webdriver.Firefox(executable_path=p)
+
+
+
+
+
 # path = os.getcwd()
 # os.environ["PATH"] += path + os.pathsep + 'geckodriver.exe'
 
