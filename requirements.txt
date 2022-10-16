@@ -8,3 +8,4 @@ torchvision
 torchaudio
 selenium
 webdriver_manager
+chromedriver-binary
