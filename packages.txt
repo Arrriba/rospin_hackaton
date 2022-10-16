@@ -1,1 +1,1 @@
-geckodriver-v0.24.0-linux64
+geckodriver-v0.24.0
