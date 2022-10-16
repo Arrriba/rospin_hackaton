@@ -11,8 +11,14 @@ from selenium import webdriver
 import os 
 
 import chromedriver_binary  # Adds chromedriver binary to path
+from selenium.webdriver.chrome.options import Options
 
-driver = webdriver.Chrome()
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+
+driver = webdriver.Chrome(chrome_options=chrome_options)
 
 # from webdriver_manager.firefox import GeckoDriverManager
 # import os, sys
