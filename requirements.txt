@@ -3,9 +3,12 @@ watchdog
 leafmap
 geopy
 transformers
-torch 
-torchvision 
-torchaudio
 selenium
+torch
+torchaudio
+torchvision
+wget
 webdriver_manager
-chromedriver-binary
+opencv-python
+albumentations
+streamlit_image_comparison
